@@ -16,9 +16,9 @@ export default function Buttons() {
         {!!allFlags.newsFlag && <Button icn={<ICONS.FontAwesome name='newspaper-o' style={styles.dashBoardButtons} />} text={'News'} rought={'NewsEvents'} />}
         {!!allFlags.obituaryFlag && <Button icn={<ICONS.Entypo name='news' style={styles.dashBoardButtons} />} text={'Obituary'} rought={'DeathNews'} />}
         {!!allFlags.graveSearchFlag && <Button icn={<ICONS.MaterialCommunityIcons name='grave-stone' style={styles.dashBoardButtons} />} text={'Grave search'} rought={'RenderHTMLContainer'} header="Grave Search" link="https://kpsiaj.org/gravesearch/" />}
-        {!!allFlags.downloadsFlag && <Button icn={<ICONS.Entypo name='download' style={styles.dashBoardButtons} />} text={'Downloads'} rought={'DownloadTabs'} />}
+        {!!allFlags.downloadsFlag && <Button icn={<ICONS.Entypo name='download' style={styles.dashBoardButtons} />} text={'Downloads'} rought={'DownloadsContainer'} />}
         {!!allFlags.aboutFlag && <Button icn={<ICONS.AntDesign name='exception1' style={styles.dashBoardButtons} />} text={'About'} rought={'RenderHTMLContainer'} name={"aboutUs"} header="About Us" />}
-        {!!allFlags.contactUsFlag && <Button icn={<ICONS.AntDesign name='contacts' style={styles.dashBoardButtons} />} text={'Contact us'} rought={'ConnectUs'} />}
+        {!!allFlags.contactUsFlag && <Button icn={<ICONS.AntDesign name='contacts' style={styles.dashBoardButtons} />} text={'Contact us'} rought={'ContactUsContainer'} />}
         {!allFlags.ramzanQuizFlag && <Button icn={<ICONS.MaterialIcons name='question-answer' style={styles.dashBoardButtons} />} text={'Quiz'} rought={'RamzanQuiz'} />}
         {/* {!!allFlags.testingQuizFlag && <Button icn={<ICONS.MaterialIcons name='question-answer' style={styles.dashBoardButtons} />} text={'Quiz'} rought={'RamzanQuiz'} />}
         {/* {!!allFlags.telethoneFlag && <Button icn={<ICONS.AntDesign name='customerservice' style={styles.dashBoardButtons} />} text={'Telethon'} rought={'Telethone'} />} */}

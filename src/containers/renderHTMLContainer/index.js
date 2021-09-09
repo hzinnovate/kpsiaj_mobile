@@ -1,8 +1,6 @@
 import React, { createRef } from 'react';
-import { useWindowDimensions, ScrollView, Linking, SafeAreaView, View } from 'react-native';
-import { HeaderDivComp } from "../../components";
-import RenderHtml from 'react-native-render-html';
-import { WebView } from 'react-native-webview';
+import { useWindowDimensions, ScrollView, SafeAreaView, View } from 'react-native';
+import { HeaderDivComp, RenderWebViewComponent, RenderHTMLComponent } from "../../components";
 import { useSelector } from 'react-redux';
 
 let header = ""
@@ -36,11 +34,6 @@ export default RenderHTMLContainer = (props) => {
 
         // obj.isEventHtml
     }
-    function onPress(event, href) {
-        if (href) {
-            Linking.openURL(href)
-        }
-    }
     // const errorHandling = (error) => {
     //     if (error.nativeEvent.description === 'net::ERR_FAILED') {
     //         web.reload()
@@ -52,22 +45,11 @@ export default RenderHTMLContainer = (props) => {
             {!!htmlData &&
                 <View style={{ flex: 1, marginTop: 60, margin: 10, backgroundColor: "#ECEAE4", padding: 10, borderRadius: 10 }}>
                     <ScrollView>
-                        <RenderHtml
-                            contentWidth={width}
-                            source={{ html: htmlData }}
-                            renderersProps={{ a: { onPress: onPress } }}
-                        />
+                        <RenderHTMLComponent htmlData={htmlData} />
                     </ScrollView>
                 </View>
             }
-            {!!link && <WebView
-                // ref={ref => { web = ref; }}
-                // onError={(e) => { errorHandling(e) }}
-                originWhitelist={['*']}
-                source={{ uri: link }}
-                style={{ marginTop: 50 }}
-
-            />}
+            {!!link && <RenderWebViewComponent link={link} />}
         </SafeAreaView>
     );
 }
