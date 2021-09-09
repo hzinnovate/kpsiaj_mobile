@@ -94,7 +94,7 @@ const popUpScreenStyles = {
 
 }
 const logoLineStyles = {
-    container: {flexDirection: "row",elevation: 10,},
+    container: {flexDirection: "row",elevation: 10, zIndex: 10},
     main: { flex: 1, alignItems: 'center' },
     logoimage: {width: 70, height: 70,},
     shadowImage: {backgroundColor: 'white',height: 70,width: 70,borderRadius: 40,elevation: 7.5}
