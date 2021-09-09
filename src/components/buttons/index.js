@@ -13,8 +13,8 @@ export default function Buttons() {
         dashBoardButtons: { fontSize: 20, color: '#ECEAE4', textShadowColor: 'black' }
     }
     return !!allFlags && <View style={buttonsContainerStyles.buttonsContainer}>
-        {!!allFlags.newsFlag && <Button icn={<ICONS.FontAwesome name='newspaper-o' style={styles.dashBoardButtons} />} text={'News'} rought={'NewsEvents'} />}
-        {!!allFlags.obituaryFlag && <Button icn={<ICONS.Entypo name='news' style={styles.dashBoardButtons} />} text={'Obituary'} rought={'DeathNews'} />}
+        {!!allFlags.newsFlag && <Button icn={<ICONS.FontAwesome name='newspaper-o' style={styles.dashBoardButtons} />} text={'News'} rought={'NewsEventsContainer'} />}
+        {!!allFlags.obituaryFlag && <Button icn={<ICONS.Entypo name='news' style={styles.dashBoardButtons} />} text={'Obituary'} rought={'ObituaryContainer'} />}
         {!!allFlags.graveSearchFlag && <Button icn={<ICONS.MaterialCommunityIcons name='grave-stone' style={styles.dashBoardButtons} />} text={'Grave search'} rought={'RenderHTMLContainer'} header="Grave Search" link="https://kpsiaj.org/gravesearch/" />}
         {!!allFlags.downloadsFlag && <Button icn={<ICONS.Entypo name='download' style={styles.dashBoardButtons} />} text={'Downloads'} rought={'DownloadsContainer'} />}
         {!!allFlags.aboutFlag && <Button icn={<ICONS.AntDesign name='exception1' style={styles.dashBoardButtons} />} text={'About'} rought={'RenderHTMLContainer'} name={"aboutUs"} header="About Us" />}
