@@ -1,4 +1,4 @@
-import React, {createRef} from 'react';
+import React, { createRef } from 'react';
 import {
   useWindowDimensions,
   ScrollView,
@@ -10,15 +10,15 @@ import {
   RenderWebViewComponent,
   RenderHTMLComponent,
 } from '../../components';
-import {useSelector} from 'react-redux';
+import { useSelector } from 'react-redux';
 
 export default RenderHTMLContainer = props => {
-    let header = '';
-    let htmlData = '';
-    let link = '';
+  let header = '';
+  let htmlData = '';
+  let link = '';
   // let web = createRef()
-  const {width} = useWindowDimensions();
-  let {route} = props;
+  const { width } = useWindowDimensions();
+  let { route } = props;
   if (route && route.params) {
     let obj = route.params;
     if (obj.link) {
@@ -29,11 +29,11 @@ export default RenderHTMLContainer = props => {
     }
     if (obj.name) {
       if (obj.name === 'aboutUs') {
-        let aboutUs = useSelector(({general}) => general.aboutUs);
+        let aboutUs = useSelector(({ general }) => general.aboutUs);
         htmlData = aboutUs.text;
       }
       if (obj.name === 'donateUs') {
-        let donateUs = useSelector(({general}) => general.donateUs);
+        let donateUs = useSelector(({ general }) => general.donateUs);
         htmlData = donateUs.text;
       }
     }
@@ -49,26 +49,35 @@ export default RenderHTMLContainer = props => {
   //     }
   // }
   return (
-    <SafeAreaView style={{flex: 1, backgroundColor: '#725054'}}>
-      <View style={{flex: 1}}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: '#725054' }}>
+      <View>
         <HeaderDivComp heading={header} />
-        {!!htmlData && (
-          <View
-            style={{
-              flex: 1,
-              marginTop: 60,
-              margin: 10,
-              backgroundColor: '#ECEAE4',
-              padding: 10,
-              borderRadius: 10,
-            }}>
-            <ScrollView>
-              <RenderHTMLComponent htmlData={htmlData} />
-            </ScrollView>
-          </View>
-        )}
-        {!!link && <RenderWebViewComponent link={link} />}
       </View>
+      {!!htmlData && (
+        <View
+          style={{
+            flex: 1,
+            marginTop: 60,
+            margin: 10,
+            backgroundColor: '#ECEAE4',
+            padding: 10,
+            borderRadius: 10,
+          }}>
+          <ScrollView>
+            <RenderHTMLComponent htmlData={htmlData} />
+          </ScrollView>
+        </View>
+      )}
+      {!!link &&
+        <View
+          style={{
+            flex: 1,
+            paddingTop: 60,
+            backgroundColor: 'white',
+          }}>
+          <RenderWebViewComponent link={link} />
+        </View>
+      }
     </SafeAreaView>
   );
 };

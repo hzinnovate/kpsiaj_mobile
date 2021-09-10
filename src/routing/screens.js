@@ -1,11 +1,7 @@
-// import { View } from 'react-native';
 import {
-    AboutContainer,
     ContactUsContainer,
-    DonateContainer,
     DownloadsContainer,
     FeedBackContainer,
-    GraveSearchContainer,
     HomeContainer,
     NewsEventsContainer,
     ObituaryContainer,
@@ -13,25 +9,16 @@ import {
     SettingsContainer,
     TelethonContainer,
     AuthenticationContainer,
-    WebContainer,
-    RenderHTMLContainer
+    RenderHTMLContainer,
+    MediaContainer,
 } from '../containers';
 
-// import BecomeContributorComponent from '../components/becomeContributor'
 let initialRouteName = "HomeContainer";
 
 let screens = [
     {
-        name: "AboutContainer",
-        component: AboutContainer
-    },
-    {
         name: "ContactUsContainer",
         component: ContactUsContainer
-    },
-    {
-        name: "DonateContainer",
-        component: DonateContainer
     },
     {
         name: "DownloadsContainer",
@@ -40,10 +27,6 @@ let screens = [
     {
         name: "FeedBackContainer",
         component: FeedBackContainer
-    },
-    {
-        name: "GraveSearchContainer",
-        component: GraveSearchContainer
     },
     {
         name: "HomeContainer",
@@ -74,12 +57,12 @@ let screens = [
         component: AuthenticationContainer
     },
     {
-        name: "WebContainer",
-        component: WebContainer
-    },
-    {
         name: "RenderHTMLContainer",
         component: RenderHTMLContainer
+    },
+    {
+        name: "MediaContainer",
+        component: MediaContainer
     },
 ]
 
