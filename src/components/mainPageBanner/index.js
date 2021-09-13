@@ -60,8 +60,11 @@ class MainPageBanners extends React.Component {
         }
     }
     openLink(isLink, isHtml, label, link, html) {
-        if (isLink || isHtml) {
-            this.props.navigation.navigate('RenderHTMLContainer', { link: !!link ? link : "", htmlData: !!html ? html : "", header: !!label ? label : "" })
+        if (isLink && link) {
+            this.props.navigation.navigate('RenderHTMLContainer', { link: link, header: !!label ? label : "Back" })
+        }
+        if (isHtml && html) {
+            this.props.navigation.navigate('RenderHTMLContainer', { htmlData: html, header: !!label ? label : "Back" })
         }
     }
 

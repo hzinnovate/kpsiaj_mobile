@@ -72,8 +72,11 @@ class HomePopUp extends React.Component {
     }
 
     openLink() {
-        if (this.state.popupScreen.isLink || this.state.popupScreen.isHtml) {
-            this.setState({ modalVisible: false }, () => this.props.navigateProp.navigate(`${'WebViewByLink'}`, { WebViewLink: this.state.popupScreen.link, isHtml: this.state.popupScreen.isHtml, isLink: this.state.popupScreen.isLink, label: this.state.popupScreen.label, html: this.state.popupScreen.html }))
+        if (this.state.popupScreen.isLink) {
+            this.setState({ modalVisible: false }, () => this.props.navigateProp.navigate("RenderHTMLContainer", { link: this.state.popupScreen.link, header: this.state.popupScreen.label, }))
+        }
+        if (this.state.popupScreen.isHtml) {
+            this.setState({ modalVisible: false }, () => this.props.navigateProp.navigate("RenderHTMLContainer", { header: this.state.popupScreen.label, htmlData: this.state.popupScreen.html }))
         }
     }
     modalDataRendering() {

@@ -46,7 +46,6 @@ export const onShareDeathNews = async (text, fileUrl, imageType) => {
             // console.log(filePath)
             let responceFromShare = await Share.open({ message: text, url: `data:${imageType};base64,${responce}`, type: imageType });
             // let responceFromShare = await Share.open({ url: `file://${filePath}`, message: text });
-            console.log('responceFromShare==================>', responceFromShare)
             RNFetchBlob.fs.unlink(filePath);
         } else {
             Share.open({ message: text });

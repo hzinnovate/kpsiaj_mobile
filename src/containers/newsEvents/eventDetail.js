@@ -18,11 +18,12 @@ export const EventDetail = (props) => {
     const { imageUrls, text, imageUrl } = showDetail;
     function onPress(event, href) {
         if (href) {
-            Linking.openURL(href)
+            navigation.navigate(`RenderHTMLContainer`, { header: "Back", name: !!props.name ? props.name : "", link: href })
+
+            // Linking.openURL(href)
         }
     }
     function onBackPress() {
-        console.log('back')
         setShowDetail("")
     }
     const renderMedia = (imageUrls, imageUrl) => {
@@ -73,7 +74,8 @@ export const EventDetail = (props) => {
                 contentWidth={width}
                 source={{ html: text }}
                 renderersProps={{ a: { onPress: onPress } }}
-                tagsStyles={{ p: { margin: 3 } }}
+                tagsStyles={{ p: { textAlign: 'justify', margin: 3 } }}
+                enableExperimentalMarginCollapsing={true}
                 ignoredTags={['br']}
                 textSelectable={true}
             />
@@ -81,7 +83,6 @@ export const EventDetail = (props) => {
     }
     const handleVideo = (media) => {
         setIsVideoPaused(true)
-        console.log('media')
         navigation.navigate('MediaContainer', media)
     }
     const renderButtons = (media) => {

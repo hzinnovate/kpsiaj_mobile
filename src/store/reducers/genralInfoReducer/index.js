@@ -2,7 +2,13 @@ import { types } from '../../actionTypes'
 
 let initialState = {
     app_version: "",
-    allFlags: "",
+    allFlags: {
+        newsFlag: true,
+        obituaryFlag: true,
+        contactUsFlag: true,
+        logoFlag: true,
+        mainPageBannerFlag: true,
+    },
     femaleDummy: "",
     aboutUs: "",
     donateUs: "",

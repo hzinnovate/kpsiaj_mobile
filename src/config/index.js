@@ -3,6 +3,8 @@
 import auth from '@react-native-firebase/auth';
 import messaging from '@react-native-firebase/messaging';
 import database from '@react-native-firebase/database';
+import firebase from '@react-native-firebase/app'
+
 // import { GoogleSignin } from '@react-native-google-signin/google-signin';
 
 // GoogleAuthKey from android/app/google-services.json => 'client'.'outhClient'
@@ -16,6 +18,7 @@ const db = database()
 export {
     auth,
     //  GoogleSignin, 
+    firebase,
     messaging,
     db
 };

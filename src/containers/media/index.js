@@ -38,7 +38,6 @@ export default function MediaContainer(props) {
     }
 
     return <SafeAreaView style={{ flex: 1 }}>
-        {/* {console.log('here i am ')} */}
         <HeaderDivComp heading={"Back"} />
         <View style={{ flex: 1, marginTop: 50 }}>
             {!!media && !!media.length && renderMedia()}

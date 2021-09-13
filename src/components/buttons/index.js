@@ -21,7 +21,7 @@ export default function Buttons() {
         {!!allFlags.contactUsFlag && <Button icn={<ICONS.AntDesign name='contacts' style={styles.dashBoardButtons} />} text={'Contact us'} rought={'ContactUsContainer'} />}
         {!!allFlags.ramzanQuizFlag && <Button icn={<ICONS.MaterialIcons name='question-answer' style={styles.dashBoardButtons} />} text={'Quiz'} rought={'RamzanQuiz'} />}
         {!!allFlags.telethoneFlag && <Button icn={<ICONS.AntDesign name='customerservice' style={styles.dashBoardButtons} />} text={'Telethon'} rought={'Telethone'} />}
-        {!!allFlags.feedbackFlag && <Button icn={<ICONS.MaterialIcons name='feedback' style={styles.dashBoardButtons} />} text={'Feedback'} rought={'Feedback'} />}
+        {!!allFlags.feedbackFlag && <Button icn={<ICONS.MaterialIcons name='feedback' style={styles.dashBoardButtons} />} text={'Feedback'} rought={'FeedBackContainer'} />}
         {/* {!!allFlags.testingQuizFlag && <Button icn={<ICONS.MaterialIcons name='question-answer' style={styles.dashBoardButtons} />} text={'Quiz'} rought={'RamzanQuiz'} />}
         {/* {!!allFlags.testingTelethoneFlag &&<Button icn={<ICONS.AntDesign name='customerservice' style={styles.dashBoardButtons} />} text={'Telethon'} rought={'Telethone'} />} */}
         {!!allFlags.donateFlag &&

@@ -2,7 +2,7 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { persistStore, persistReducer } from 'redux-persist';
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import thunk from 'redux-thunk';
-import { userReducer, toastReducer, eventAndDeathNewsReducer, generalInfoReducer } from './reducers';
+import { userReducer, toastReducer, eventAndDeathNewsReducer, generalInfoReducer, feedBackReducer } from './reducers';
 
 //Redux Thunk middleware allows you to write action creators that return a function instead of an action.
 //The thunk can be used to delay the dispatch of an action, or to dispatch only if a certain condition is met.
@@ -12,6 +12,7 @@ let reducer = combineReducers({
         toast: toastReducer,
         news: eventAndDeathNewsReducer,
         general: generalInfoReducer,
+        feedback: feedBackReducer
 })
 
 const persistConfig = { key: 'root', storage: AsyncStorage, }

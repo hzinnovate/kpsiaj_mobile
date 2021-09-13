@@ -33,7 +33,6 @@ class AppNavigatior extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            setApp_version: "1.1.4",
             oneTimeApis: {
                 isHittingOneTimeApis: false
             }
@@ -98,8 +97,8 @@ const mapStateToProps = (props) => {
     const { auth, toast, news, general } = props;
     return {
         user: auth.user,
-        app_version: general.app_version,
         toastConfig: toast.config,
+        isToastShowing: toast.isToastShowing
     };
 };
 

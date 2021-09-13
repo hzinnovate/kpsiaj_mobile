@@ -13,7 +13,6 @@ const famaleImage = images.femaleForDeathnews;
 export const ObituaryDetail = (props) => {
     let { showDetail, setShowDetail } = props;
     function onBackPress() {
-        console.log('back')
         setShowDetail("")
     }
     const { imageUrl, imageID, imageName, imageType, nameString, burialInfo, dateTimeString, name, fatherName, maleFemale, husbandName, age, wasOrToBe, dateOfNamaz, timeOfNamaz, placeOfNamaz } = showDetail;

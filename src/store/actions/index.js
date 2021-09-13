@@ -21,3 +21,6 @@ export {
     getDeathNews,
     getEventNews
 } from './eventAndDeathNewsActions';
+export {
+    sendFeedBack
+} from './feedBackAction';
