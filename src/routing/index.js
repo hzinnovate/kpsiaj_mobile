@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { navigationRef, isReadyRef } from './rootNavigation';
+import { auth } from '../config';
 import {
     signout,
     clearToast,
@@ -17,7 +18,9 @@ import {
     getLastUpdateTimeOfPopUpScreen,
     saveAppOpeningTime,
     getDeathNews,
-    getEventNews
+    getEventNews,
+    createUserInDB,
+    removeSavedUser
 } from '../store/actions';
 import { Toast } from '../universalComponents';
 import {
@@ -37,6 +40,28 @@ class AppNavigatior extends Component {
                 isHittingOneTimeApis: false
             }
         }
+    }
+    async componentDidMount() {
+        // auth().signOut()
+        auth().onAuthStateChanged(async userAuth => {
+            // console.log('login=> nabigator', userAuth)
+            // try {
+            if (userAuth) {
+                let user = {
+                    uid: userAuth.uid,
+                    phoneNumber: userAuth.phoneNumber
+                }
+                this.props.createUserInDB(user)
+            } else {
+                console.log('onAuthStateChanged', userAuth)
+                this.props.removeSavedUser()
+            }
+            // } catch (error) {
+            //     console.log('error from on auth state change', error)
+            // }
+        });
+
+
     }
     static getDerivedStateFromProps(props, state) {
         let obj = { ...state.oneTimeApis }
@@ -115,5 +140,7 @@ export default connect(mapStateToProps,
         getLastUpdateTimeOfPopUpScreen,
         saveAppOpeningTime,
         getDeathNews,
-        getEventNews
+        getEventNews,
+        createUserInDB,
+        removeSavedUser
     })(AppNavigatior);

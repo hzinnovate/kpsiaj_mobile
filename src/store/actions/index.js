@@ -1,6 +1,9 @@
 export {
-    signin,
+    signInWithPhoneNumber,
+    verifyNumber,
     signout,
+    removeSavedUser,
+    createUserInDB
 } from './auth/userAction';
 export {
     setToast,

@@ -10,7 +10,7 @@ let initialState = {
     email: "",
     feedbackText: "",
     phoneNumber: "",
-    departmentsForFeedBack: null,
+    departmentsForFeedBack: "",
     departmentsForFeedBackText: "",
 }
 

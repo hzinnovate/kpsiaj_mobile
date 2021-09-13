@@ -17,10 +17,11 @@ export const sendFeedBack = (obj, setFreshState) => dispatch => {
                 obj.uid = timeStamp
                 db.ref(`feedback/${timeStamp}`).set(obj).then(() => {
                     dispatch({ type: types.SEND_FEEDBACK_SUCCESS })
+                    dispatch(setToast("success", "Thanks for writing back to us. Your feedback will be shared right away with relevant department. Stay connected with us."))
                     if (setFreshState) {
                         setFreshState()
                     }
-                    dispatch(setToast("success", "Thanks for writing back to us. Your feedback will be shared right away with relevant department. Stay connected with us."))
+                    RootNavigation.navigate("HomeContainer")
                 })
             })
         })
