@@ -19,11 +19,9 @@ export default function Buttons() {
         {!!allFlags.downloadsFlag && <Button icn={<ICONS.Entypo name='download' style={styles.dashBoardButtons} />} text={'Downloads'} rought={'DownloadsContainer'} />}
         {!!allFlags.aboutFlag && <Button icn={<ICONS.AntDesign name='exception1' style={styles.dashBoardButtons} />} text={'About'} rought={'RenderHTMLContainer'} name={"aboutUs"} header="About Us" />}
         {!!allFlags.contactUsFlag && <Button icn={<ICONS.AntDesign name='contacts' style={styles.dashBoardButtons} />} text={'Contact us'} rought={'ContactUsContainer'} />}
-        {!!allFlags.ramzanQuizFlag && <Button icn={<ICONS.MaterialIcons name='question-answer' style={styles.dashBoardButtons} />} text={'Quiz'} rought={'RamzanQuiz'} />}
-        {!!allFlags.telethoneFlag && <Button icn={<ICONS.AntDesign name='customerservice' style={styles.dashBoardButtons} />} text={'Telethon'} rought={'TelethonContainer'} />}
         {!!allFlags.feedbackFlag && <Button icn={<ICONS.MaterialIcons name='feedback' style={styles.dashBoardButtons} />} text={'Feedback'} rought={'FeedBackContainer'} />}
-        {/* {!!allFlags.testingQuizFlag && <Button icn={<ICONS.MaterialIcons name='question-answer' style={styles.dashBoardButtons} />} text={'Quiz'} rought={'RamzanQuiz'} />}
-        {/* {!!allFlags.testingTelethoneFlag &&<Button icn={<ICONS.AntDesign name='customerservice' style={styles.dashBoardButtons} />} text={'Telethon'} rought={'Telethone'} />} */}
+        {!allFlags.ramzanQuizFlag && <Button icn={<ICONS.MaterialIcons name='question-answer' style={styles.dashBoardButtons} />} text={'Quiz'} rought={'QuizContainer'} />}
+        {!allFlags.telethoneFlag && <Button icn={<ICONS.AntDesign name='customerservice' style={styles.dashBoardButtons} />} text={'Telethon'} rought={'TelethonContainer'} />}
         {!!allFlags.donateFlag &&
             <TouchableOpacity
                 onPress={() => navigation.navigate('RenderHTMLContainer', { header: "Donate", name: "donateUs" })}

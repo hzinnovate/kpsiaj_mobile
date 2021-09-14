@@ -20,7 +20,8 @@ import {
     getDeathNews,
     getEventNews,
     createUserInDB,
-    removeSavedUser
+    removeSavedUser,
+    getCurrentUserData
 } from '../store/actions';
 import { Toast } from '../universalComponents';
 import {
@@ -37,7 +38,8 @@ class AppNavigatior extends Component {
         super(props);
         this.state = {
             oneTimeApis: {
-                isHittingOneTimeApis: false
+                isHittingOneTimeApis: false,
+                isHittingAuthenticApis: false
             }
         }
     }
@@ -53,7 +55,6 @@ class AppNavigatior extends Component {
                 }
                 this.props.createUserInDB(user)
             } else {
-                console.log('onAuthStateChanged', userAuth)
                 this.props.removeSavedUser()
             }
             // } catch (error) {
@@ -64,7 +65,7 @@ class AppNavigatior extends Component {
 
     }
     static getDerivedStateFromProps(props, state) {
-        let obj = { ...state.oneTimeApis }
+        let obj = state.oneTimeApis
         let {
             getAppVersion,
             getAllFlags,
@@ -75,7 +76,10 @@ class AppNavigatior extends Component {
             getLastUpdateTimeOfPopUpScreen,
             saveAppOpeningTime,
             getDeathNews,
-            getEventNews
+            getEventNews,
+            user,
+            getCurrentUserData,
+            isUserLogin
         } = props;
         try {
             if (!obj.isHittingOneTimeApis) {
@@ -90,6 +94,11 @@ class AppNavigatior extends Component {
                 getDeathNews()
                 getEventNews()
                 obj.isHittingOneTimeApis = true
+            }
+            if (isUserLogin && !obj.isHittingAuthenticApis) {
+                console.log('done')
+                getCurrentUserData(user.uid)
+                obj.isHittingAuthenticApis = true
             }
         } catch (error) {
 
@@ -122,6 +131,7 @@ const mapStateToProps = (props) => {
     const { auth, toast, news, general } = props;
     return {
         user: auth.user,
+        isUserLogin: auth.isUserLogin,
         toastConfig: toast.config,
         isToastShowing: toast.isToastShowing
     };
@@ -142,5 +152,6 @@ export default connect(mapStateToProps,
         getDeathNews,
         getEventNews,
         createUserInDB,
-        removeSavedUser
+        removeSavedUser,
+        getCurrentUserData
     })(AppNavigatior);

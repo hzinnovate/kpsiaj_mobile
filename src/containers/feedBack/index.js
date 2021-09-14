@@ -59,7 +59,7 @@ class FeedBackContainer extends Component {
                 phoneNumber,
                 uid: ''
             }
-            sendFeedBack(obj, this.setFreshState.bind(this))
+            sendFeedBack(obj)
         } catch (error) {
             console.log(error)
         }

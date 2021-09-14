@@ -29,6 +29,25 @@ function userReducer(state = initialState, action) {
 
         case types.USER_DATA_REMOVED:
             return { ...state, user: {}, isLoading: false, isUserLogin: false };
+        case types.CREATE_USER_START:
+            return { ...state, isLoading: true };
+        case types.CREATE_USER_SUCCESS:
+            return { ...state, isLoading: false };
+        case types.CREATE_USER_FAILED:
+            return { ...state, isLoading: false };
+        case types.UPDATE_USER_START:
+            return { ...state, isLoading: true };
+        case types.UPDATE_USER_SUCCESS:
+            return { ...state, isLoading: false };
+        case types.UPDATE_USER_FAILED:
+            return { ...state, isLoading: false };
+        case types.DELETE_USER_START:
+            return { ...state, isLoading: true };
+        case types.DELETE_USER_SUCCESS:
+            return { ...state, isLoading: false };
+        case types.DELETE_USER_FAILED:
+            return { ...state, isLoading: false };
+
         default:
             return state;
     }

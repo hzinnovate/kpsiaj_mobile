@@ -21,21 +21,21 @@ export default FeedBackComponent = (props) => {
     return (
         <SafeAreaView style={{ flex: 1 }}>
             <HeaderDivComp heading="Feedback" />
-            <View style={{ marginTop: 50, padding: 20, backgroundColor: 'white', flex: 1 }}>
-                <ScrollView>
+            <ScrollView style={{ marginTop: 50 }}>
+                <View style={{ padding: 30 }}>
                     <TextInput
                         placeholder="Full Name"
                         value={fullName || ""}
                         onChangeText={(e) => onInputChange('fullName', e)}
                         maxLength={30}
-                        style={{ color: 'black', borderWidth: 0.5, borderColor: "grey", borderRadius: 5, borderBottomColor: "brown", borderBottomWidth: 3, padding: 10, fontSize: 18, marginVertical: 10 }}
+                        style={{ height: 40, color: 'black', borderWidth: 0.5, borderColor: "grey", borderRadius: 5, borderBottomColor: "brown", borderBottomWidth: 3, padding: 10, fontSize: 18, marginVertical: 10 }}
                     />
                     <TextInput
                         placeholder="Father / Husband Name"
                         value={fatherName || ""}
                         onChangeText={(e) => onInputChange('fatherName', e)}
                         maxLength={30}
-                        style={{ color: 'black', borderWidth: 0.5, borderColor: "grey", borderRadius: 5, borderBottomColor: "brown", borderBottomWidth: 3, padding: 10, fontSize: 18, marginVertical: 10 }}
+                        style={{ height: 40, color: 'black', borderWidth: 0.5, borderColor: "grey", borderRadius: 5, borderBottomColor: "brown", borderBottomWidth: 3, padding: 10, fontSize: 18, marginVertical: 10 }}
 
                     />
                     <TextInput
@@ -44,7 +44,7 @@ export default FeedBackComponent = (props) => {
                         onChangeText={(e) => onInputChange('email', e)}
                         keyboardType={"email-address"}
                         maxLength={40}
-                        style={{ color: 'black', borderWidth: 0.5, borderColor: "grey", borderRadius: 5, borderBottomColor: "brown", borderBottomWidth: 3, padding: 10, fontSize: 18, marginVertical: 10 }}
+                        style={{ height: 40, color: 'black', borderWidth: 0.5, borderColor: "grey", borderRadius: 5, borderBottomColor: "brown", borderBottomWidth: 3, padding: 10, fontSize: 18, marginVertical: 10 }}
 
                     />
                     <TextInput
@@ -53,7 +53,7 @@ export default FeedBackComponent = (props) => {
                         onChangeText={(e) => onInputChange('phoneNumber', e)}
                         keyboardType={"number-pad"}
                         maxLength={20}
-                        style={{ color: 'black', borderWidth: 0.5, borderColor: "grey", borderRadius: 5, borderBottomColor: "brown", borderBottomWidth: 3, padding: 10, fontSize: 18, marginVertical: 10 }}
+                        style={{ height: 40, color: 'black', borderWidth: 0.5, borderColor: "grey", borderRadius: 5, borderBottomColor: "brown", borderBottomWidth: 3, padding: 10, fontSize: 18, marginVertical: 10 }}
 
                     />
                     {/* Drop Down for select departmentForFeedBack */}
@@ -80,7 +80,7 @@ export default FeedBackComponent = (props) => {
                         value={departmentsForFeedBackText || ""}
                         onChangeText={(e) => onInputChange('departmentsForFeedBackText', e)}
                         maxLength={40}
-                        style={{ color: 'black', borderWidth: 0.5, borderColor: "grey", borderRadius: 5, borderBottomColor: "brown", borderBottomWidth: 3, padding: 10, fontSize: 18, marginVertical: 10 }}
+                        style={{ height: 40, color: 'black', borderWidth: 0.5, borderColor: "grey", borderRadius: 5, borderBottomColor: "brown", borderBottomWidth: 3, padding: 10, fontSize: 18, marginVertical: 10 }}
 
                     />}
                     <View>
@@ -106,113 +106,16 @@ export default FeedBackComponent = (props) => {
                     >
                         <Text style={{ color: "white" }}>Submit</Text>
                     </TouchableOpacity>
-                </ScrollView>
-            </View>
+                </View>
+            </ScrollView>
         </SafeAreaView>
     )
 }
 const styles = StyleSheet.create({
-    checkboxContainer: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        marginBottom: 5
-    },
-    checkbox: {
-        borderWidth: 2,
-        borderColor: COLORS.yellow,
-        borderRadius: 4,
-        marginRight: 10,
-        width: 20,
-        height: 20,
-        marginTop: -10
-    },
-    checkboxText: {
-        color: COLORS.black1,
-        //   ...FONTS.h3_r.Poppins,
-        width: '90%'
-    },
-    container: { display: 'flex', justifyContent: 'space-between', flex: 1 },
-    stripButton: {
-        backgroundColor: COLORS.black1,
-        width: 150,
-        marginBottom: 100,
-        height: 50,
-        borderRadius: 5,
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    stripButtonTxt: {
-        color: COLORS.light,
-        // ...FONTS.body3_b.OpenSans 
-    },
-    labelStyle: {},
     validationStatusStyle: {
         color: COLORS.yellow,
     },
-    btnRight: {
-        //   ...FONTS.h1_b.Poppins,
-        color: COLORS.gray3,
-    },
-    body: {
-        backgroundColor: COLORS.white,
-        flex: 1,
-        padding: '2%',
-    },
     labelStyle: {
         paddingBottom: '4%',
-    },
-    textInput: {
-        marginBottom: '6%',
-        width: '100%',
-        textTransform: 'capitalize'
-    },
-    paymentText: {
-        ...FONTS.h_m.Poppins,
-        color: COLORS.black1,
-        marginTop: '5%',
-        marginBottom: '8%',
-        lineHeight: 24,
-    },
-    languageLink: { width: '30%', paddingVertical: '2%' },
-    languageText: {
-        //   ...FONTS.h1_r.Poppins,
-        color: COLORS.black1,
-        marginBottom: '8%',
-        lineHeight: 24,
-        textDecorationLine: 'underline',
-    },
-    _row: { flexDirection: 'row', marginBottom: SIZES.height * 0.05 },
-    _col1: { flex: 0.8, marginRight: '2%' },
-    _col2: { flex: 0.8 },
-    _imgStyle: {
-        marginTop: SIZES.height * 0.04,
-    },
-    _space: { height: 30 },
-    header: {
-        backgroundColor: COLORS.white,
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        paddingLeft: 15,
-        paddingRight: 15,
-        height: 50,
-        borderBottomColor: COLORS.lightGray1,
-        borderBottomWidth: 0.5,
-    },
-    headerText: {
-        //   ...FONTS.h1_m.Poppins,
-        color: COLORS.black1,
-        marginRight: -10,
-        lineHeight: 24,
-    },
-    headerRightImage: {
-        width: 24,
-        height: 26,
-    },
-    headerRightBtn: {
-        //   ...FONTS.h1_m.Poppins,
-        color: COLORS.black1,
-        lineHeight: 24,
     },
 })

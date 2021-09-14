@@ -3,7 +3,11 @@ export {
     verifyNumber,
     signout,
     removeSavedUser,
-    createUserInDB
+    createUserInDB,
+    getCurrentUserData,
+    onCreateUserOnFirebase,
+    onUpdateUser,
+    onRemoveUser
 } from './auth/userAction';
 export {
     setToast,
@@ -27,3 +31,7 @@ export {
 export {
     sendFeedBack
 } from './feedBackAction';
+
+export {
+    sendTelethonPledge
+} from './telethonActions';

@@ -11,6 +11,7 @@ import {
     AuthenticationContainer,
     RenderHTMLContainer,
     MediaContainer,
+    AddNestedUsers
 } from '../containers';
 
 let initialRouteName = "HomeContainer";
@@ -63,6 +64,10 @@ let screens = [
     {
         name: "MediaContainer",
         component: MediaContainer
+    },
+    {
+        name: "AddNestedUsers",
+        component: AddNestedUsers
     },
 ]
 
