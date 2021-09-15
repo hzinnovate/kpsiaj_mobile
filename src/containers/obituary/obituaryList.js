@@ -24,7 +24,7 @@ export const ObituaryList = (props) => {
         let sorted = deathNews.sort((a, b) => a.timeStamp - b.timeStamp);
         let display = sorted.reverse()
         return (
-            <>
+            <View style={{flex: 1}}>
                 <HeaderDivComp heading={"Obituary"} />
                 <View style={[NewsEventsStyles.mainscreen, { marginTop: 50 }]}>
                     <View style={{ justifyContent: 'space-evenly', height: 100 }}>
@@ -37,7 +37,7 @@ export const ObituaryList = (props) => {
                         initialNumToRender={10}
                     />
                 </View>
-            </>
+            </View>
         )
     }
     else {

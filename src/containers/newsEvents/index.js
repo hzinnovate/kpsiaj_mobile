@@ -6,7 +6,7 @@ import { SafeAreaView } from 'react-native';
 export default NewsEventsContainer = () => {
     let [showDetail, setShowDetail] = useState("")
     return (
-        <SafeAreaView style={{ flex: 1 }}>
+        <SafeAreaView style={{ flex: 1, backgroundColor: "#725054" }}>
             {!!showDetail ?
                 <EventDetail showDetail={showDetail} setShowDetail={setShowDetail} />
                 :

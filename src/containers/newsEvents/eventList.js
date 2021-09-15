@@ -36,7 +36,7 @@ export const EventList = (props) => {
         let sorted = events.sort((a, b) => a.timeStamp - b.timeStamp);
         let display = sorted.reverse()
         return (
-            <>
+            <View style={{flex: 1}}>
                 <HeaderDivComp heading={"News & Events"} />
                 <View style={[NewsEventsStyles.mainscreen, { marginTop: 50 }]}>
                     <FlatList
@@ -46,7 +46,7 @@ export const EventList = (props) => {
                         initialNumToRender={10}
                     />
                 </View>
-            </>
+            </View>
         )
     }
     else {

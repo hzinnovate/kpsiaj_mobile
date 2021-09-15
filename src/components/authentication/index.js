@@ -69,7 +69,8 @@ export default AuthenticationComponent = () => {
     }
 
     return (
-        <SafeAreaView style={{ flex: 1 }}>
+        <SafeAreaView style={{ flex: 1 , backgroundColor: "#725054"}}>
+            <View style={{flex: 1, backgroundColor: "white"}}>
             <HeaderDivComp heading={"Phone Authentication"} />
             <KeyboardAvoidingView style={{ marginTop: 50, padding: 10 }}>
                 <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -81,6 +82,7 @@ export default AuthenticationComponent = () => {
                     </ScrollView>
                 </TouchableWithoutFeedback>
             </KeyboardAvoidingView>
+            </View>
         </SafeAreaView>
     )
 }

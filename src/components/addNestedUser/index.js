@@ -18,7 +18,8 @@ export const AddNestedUserComponent = (props) => {
         onInputChange,
         onDeletUser,
         isUpdate } = props;
-    return <SafeAreaView style={{ flex: 1 }}>
+    return  <SafeAreaView style={{ flex: 1 , backgroundColor: "#725054"}}>
+    <View style={{flex: 1, backgroundColor: "white"}}>
         <HeaderDivComp heading={isUpdate ? "Edit User" : "Add User"} />
         <ScrollView style={{ marginTop: 50 }}>
             <View style={{ padding: 30 }}>
@@ -120,6 +121,7 @@ export const AddNestedUserComponent = (props) => {
                 {/* <Text style={{ textAlign: 'center', fontSize: 16 }}>Select Date of Birth and Gender</Text> */}
             </View>
         </ScrollView>
+        </View>
     </SafeAreaView>
 }
 const styles = StyleSheet.create({

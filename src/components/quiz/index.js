@@ -36,7 +36,8 @@ export default QuizComponent = (props) => {
             keyExtractor={item => item.uid.toString()}
         />
     }
-    return <SafeAreaView style={{ flex: 1, backgroundColor: 'white' }}>
+    return  <SafeAreaView style={{ flex: 1 , backgroundColor: "#725054"}}>
+    <View style={{flex: 1, backgroundColor: "white"}}>
         <HeaderDivComp heading={"Quiz Program"} />
         <View style={{ marginTop: 50 }}>
             <View style={{ position: 'absolute', top: 0, right: 0 }}>
@@ -60,5 +61,6 @@ export default QuizComponent = (props) => {
                 <Text style={{ color: 'white' }}>Add</Text>
             </TouchableOpacity>
         </>}
+        </View>
     </SafeAreaView>
 }

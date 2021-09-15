@@ -19,7 +19,8 @@ export default FeedBackComponent = (props) => {
     } = props;
 
     return (
-        <SafeAreaView style={{ flex: 1 }}>
+        <SafeAreaView style={{ flex: 1 , backgroundColor: "#725054"}}>
+        <View style={{flex: 1, backgroundColor: "white"}}>
             <HeaderDivComp heading="Feedback" />
             <ScrollView style={{ marginTop: 50 }}>
                 <View style={{ padding: 30 }}>
@@ -108,6 +109,7 @@ export default FeedBackComponent = (props) => {
                     </TouchableOpacity>
                 </View>
             </ScrollView>
+            </View>
         </SafeAreaView>
     )
 }

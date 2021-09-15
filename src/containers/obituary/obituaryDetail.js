@@ -57,7 +57,7 @@ export const ObituaryDetail = (props) => {
     return (
         <View>
             <HeaderDivComp heading={"Back"} onBackPress={onBackPress} customizeBackButton={true} />
-            <View style={{ marginVertical: 50 }}>
+            <View style={{ marginVertical: 50, backgroundColor: "white" }}>
                 <ScrollView style={{ padding: 15 }}>{renderImage()}{renderText()}</ScrollView>
             </View>
             {renderButtons()}

@@ -35,8 +35,8 @@ let Constitution = () => {
     );
   };
   return (
-    <SafeAreaView style={{ flex: 1 }}>
-      <View style={{ flexDirection: 'column', flex: 1 }}>
+    <SafeAreaView style={{ flex: 1 , backgroundColor: "#725054"}}>
+      <View style={{ flexDirection: 'column', flex: 1 , backgroundColor: "white"}}>
         <Pdf
           source={{ uri: url, cache: true }}
           style={{
